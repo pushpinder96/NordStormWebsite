@@ -1,0 +1,41 @@
+
+.outerdiv{
+   /* background-color: rgba(255,255,255,0.5);*/
+   width: 100%;
+   height:auto;
+   overflow-y: hidden;
+}
+.innerdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+.Ptag{
+    text-decoration:underline;
+    font-size:35px;
+    position:absolute;
+    left:48%;
+}
+@media screen and (max-width:600px){
+.outerdiv{
+        
+    background-color: rgba(255,255,255,0.3);
+   width: 100%;
+   height:auto;
+}
+.Ptag{
+    text-decoration:underline;
+    font-size:25px;
+    position:absolute;
+    left:40%;
+}
+.innerdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+
+}

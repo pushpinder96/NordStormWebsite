@@ -1,0 +1,398 @@
+.outerdiv{
+    width: 100%;
+    height: 500px;
+}
+.innerdiv{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    justify-content: space-around;
+    left: 20%;
+    top: 10%;
+}
+.imagediv{
+
+    box-shadow: 10px 10px 10px black;
+}
+.imagediv img{
+    width: 250px;
+}
+.title p{
+    font-size: 25px;
+}
+.pricediv p span{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.underscore{
+    position: absolute;
+    top: 85%;
+    left: 73%;
+}
+.totalPrice{
+    position: absolute;
+    top:94%;
+    left: 75%;
+    font-size: 22px;
+}
+.ButtonDiv{
+    position: absolute;
+    top: 50%;
+    left: 63%;
+}
+.continuePurchasing{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#4eb5f1;
+    background-color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+
+}
+
+.AddToCart{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:white;
+    background-color:#4eb5f1;
+    text-align:center;
+    transition: all 0.2s;
+
+}
+.Proceed{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    background-color:#4eb5f1;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+
+}
+
+@media screen and (max-width:600px){
+    .outerdiv{
+        width: 100%;
+        height: 500px;
+    }
+    .innerdiv{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        justify-content: space-around;
+        left: 20%;
+        top: 10%;
+    }
+    .imagediv{
+    
+        box-shadow: 10px 10px 10px black;
+    }
+    .imagediv img{
+        width: 150px;
+    }
+    .descriptionDiv{
+        position: relative;
+        left: 15%;
+        width: 100%;
+    }
+    .title p{
+        font-size: 20px;
+    }
+    .pricediv p span{
+        font-size: 15px;
+        font-weight: bolder;
+    }
+    .underscore{
+        position: absolute;
+        top: 100%;
+        left: 70%;
+    }
+    .totalPrice{
+        position: absolute;
+        top: 115%;
+        left: 70%;
+    }
+    .ButtonDiv{
+        position: absolute;
+        top: 65%;
+        left: 70%;
+    }
+    .continuePurchasing{
+        display:inline-block;
+        font-size: 10px;
+        width: 150%;
+        height: 20px;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:200;
+        color:#4eb5f1;
+        background-color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+  .AddToCart{
+        display:inline-block;
+        font-size: 10px;
+        width: 100%;
+        height: 20px;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:200;
+        color:white;
+        background-color:#4eb5f1;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    .Proceed{
+        font-size: 10px;
+        width: 200%;
+        height: auto;
+        display:inline-block;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+    
+        background-color:#4eb5f1;
+        color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    
+}
+@media screen and (max-width:450px){
+    .outerdiv{
+        width: 100%;
+        height: 500px;
+    }
+    .innerdiv{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        justify-content: space-around;
+        left: 10%;
+        top: 10%;
+    }
+    .imagediv{
+    
+        box-shadow: 10px 10px 10px black;
+    }
+    .imagediv img{
+        width: 150px;
+    }
+    .descriptionDiv{
+        position: relative;
+        left: 20%;
+        width: 100%;
+    }
+    .title p{
+        font-size: 15px;
+    }
+    .pricediv p span{
+        font-size: 13px;
+        font-weight: bolder;
+    }
+    .underscore{
+        position: absolute;
+        top:100%;
+        left: 80%;
+    }
+    .increase{
+        position: absolute;
+        top: 25%;
+        left: 20%;
+    }
+    .totalPrice{
+        position: absolute;
+        top: 110%;
+        left: 80%;
+    }
+    .ButtonDiv{
+        position: absolute;
+        top: 60%;
+        left: 70%;
+    }
+    .AddToCart{
+        display:inline-block;
+        font-size: 10px;
+        width: 100%;
+        height: 20px;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:200;
+        color:white;
+        background-color:#4eb5f1;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    .continuePurchasing{
+        display:inline-block;
+        font-size: 10px;
+        width: 200%;
+        height: 20px;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:200;
+        color:#4eb5f1;
+        background-color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    .Proceed{
+        font-size: 10px;
+        width: 200%;
+        height: auto;
+        display:inline-block;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+    
+        background-color:#4eb5f1;
+        color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    
+}
+@media screen and (max-width:400px){
+    .outerdiv{
+        width: 100%;
+        height: 400px;
+    }
+    .innerdiv{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        justify-content: space-around;
+        left: 10%;
+        top: 10%;
+    }
+    .imagediv{
+    
+        box-shadow: 10px 10px 10px black;
+    }
+    .imagediv img{
+        width: 100px;
+    }
+    .descriptionDiv{
+        position: relative;
+        left: 10%;
+        width: 100%;
+    }
+    .title p{
+        font-size: 10px;
+    }
+    .pricediv p span{
+        font-size: 13px;
+        font-weight: bolder;
+    }
+    .underscore{
+        position: absolute;
+        top: 135%;
+        left: 70%;
+    }
+    .increase{
+        position: absolute;
+        top: 40%;
+        left: 15%;
+    }
+    .totalPrice{
+        position: absolute;
+        top: 150%;
+        left: 70%;
+    }
+    .ButtonDiv{
+        position: absolute;
+        top: 80%;
+        left: 60%;
+    }
+    .continuePurchasing{
+        display:inline-block;
+        font-size: 10px;
+        width: 150%;
+        height: 20px;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+        font-weight:200;
+        color:#4eb5f1;
+        background-color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    .Proceed{
+        font-size: 10px;
+        width: 150%;
+        height: auto;
+        display:inline-block;
+        padding:0.2em 0.8em;
+        margin:0 0.2em 0.2em 0;
+        border-radius:1em;
+        box-sizing: border-box;
+        text-decoration:none;
+        font-family:'Roboto',sans-serif;
+    
+        background-color:#4eb5f1;
+        color:#FFFFFF;
+        text-align:center;
+        transition: all 0.2s;
+    
+    }
+    
+}

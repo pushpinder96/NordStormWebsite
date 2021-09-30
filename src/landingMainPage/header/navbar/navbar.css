@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+.NavbarDiv {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    /* border: 3px solid green;*/ 
+  }
+  .NavbarDiv ul li{
+    display: inline-block;
+    font-size: 15px;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  @media only screen and (max-width: 600px){
+   .NavbarDiv{
+     display: none;
+   }
+  }
+  @media only screen and (max-width: 400px){
+
+    .NavbarDiv{
+      display: none;
+    }
+  }

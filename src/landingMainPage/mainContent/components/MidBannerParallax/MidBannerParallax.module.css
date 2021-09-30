@@ -1,0 +1,20 @@
+.imageDiv{
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+}
+.image{
+    height:400px;
+    width:auto;
+    border-radius:5%;
+}
+@media only screen and (max-width:600px) {
+    .image{
+        height:150px;
+        width:auto;
+        border-radius:5%
+    }
+    
+}

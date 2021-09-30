@@ -1,0 +1,27 @@
+.outerDiv{
+    width: 80%;
+    height: auto;
+}
+.innerDiv{
+    position:relative;
+    left: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width:600px){
+    .outerDiv{
+        width: 80%;
+        height: auto;
+    }
+    .innerDiv{
+        position:relative;
+        left: 10%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

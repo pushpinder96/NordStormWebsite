@@ -1,0 +1,6 @@
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+body{background: rgb(235,239,238);
+  background: linear-gradient(167deg, rgba(235,239,238,0.8127626050420168) 16%, rgba(169,171,168,0) 70%, rgba(169,171,168,0) 99%);}

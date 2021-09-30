@@ -1,0 +1,30 @@
+.outerdiv{
+    width: 80%;
+    height: auto;
+}
+.innerdiv{
+
+    position:relative;
+    left: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Ptag{
+    text-decoration:underline;
+    font-size:35px;
+    position:absolute;
+    left:48%;
+}
+
+@media screen and (max-width:600px){
+  
+    .Ptag{
+        text-decoration:underline;
+        font-size:25px;
+        position:absolute;
+        left:40%;
+    }
+   
+    }

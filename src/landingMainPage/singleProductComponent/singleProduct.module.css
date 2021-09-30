@@ -1,0 +1,148 @@
+.outerdiv{
+ width:250px;
+ display: flex;
+ flex-flow: column;
+ justify-content: space-around;
+ margin:10px;
+ overflow: hidden;
+ 
+}
+.imageDiv{
+    height: 100%;
+    width: 100%;
+    box-shadow: 5px 5px 15px  black;
+    overflow: hidden;
+}
+.imageDiv img:hover{
+    transition: ease-in-out 300ms;
+   
+}
+.imageDiv img{
+    width: 100%;
+    height: 320px;
+}
+.imageDiv:hover .QuickReviewBUtton{
+    opacity: 1;
+    transition: ease-in-out 300ms;
+}
+.QuickReviewBUtton{
+    position: relative;
+    top: 320px;
+    opacity: 0;
+}
+.QuickReviewBUtton h4{
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+    align-items: center;
+    height: 40px;
+    color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.titleDiv h3{
+    font-size: 25px;font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+.buttonDiv button{
+    width: 50%;
+    height: 30px;
+    border-radius: 50px 50px;
+    border: 1px solid black;
+    font-size: 15px;
+    
+}
+.buttonDiv button:hover{
+    cursor:pointer;
+    background-color: black;
+    color: whitesmoke;
+    transition: ease-in 200ms;
+}
+.mainDiv{
+    overflow: hidden;
+}
+.glance {
+    background: rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: translateY(50%);
+  }
+  
+@media screen and (max-width:600px){
+    .outerdiv{
+        width:140px;
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+       }
+       .imageDiv img{
+           width: 100%;
+           height: 180px;
+       }
+       .titleDiv h3{
+        font-size: 15px;
+        font-family: 'Ubuntu', sans-serif;
+    
+    }
+      
+       .buttonDiv button{
+           width: auto;
+           padding-left: 10px;
+           padding-right: 10px;
+           height: auto;
+           border-radius: 50px 50px;
+           border: 1px solid black;
+           font-size: 10px;
+           
+       }
+       .buttonDiv button:hover{
+           cursor:pointer;
+           background-color: black;
+           color: whitesmoke;
+           transition: ease-in 200ms;
+       }
+}
+
+
+@media screen and (max-width:400px){
+    .outerdiv{
+        width:120px;
+        display: flex;
+        flex-flow: column;
+        flex-wrap: nowrap;
+       }
+       .imageDiv img{
+           width: 100%;
+           height: 170px;
+       }
+       .titleDiv h3{
+        font-size: 12px;
+        font-family: 'Ubuntu', sans-serif;
+    
+    }
+      
+       .buttonDiv button{
+           width: auto;
+           padding-left: 10px;
+           padding-right: 10px;
+           height: auto;
+           border-radius: 50px 50px;
+           border: 1px solid black;
+           font-size: 8px;
+           
+       }
+       .buttonDiv button:hover{
+           cursor:pointer;
+           background-color: black;
+           color: whitesmoke;
+           transition: ease-in 200ms;
+       }
+       .price{
+           font-size: 10px;
+       }
+}

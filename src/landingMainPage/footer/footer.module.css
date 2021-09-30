@@ -1,0 +1,85 @@
+.outerDiv{
+    width: 100%;
+    height: auto;
+    background: rgb(235,239,238);
+background: linear-gradient(167deg, rgba(235,239,238,0.8127626050420168) 0%, rgba(169,171,168,0.07046568627450978) 0%, rgba(235,239,238,0.4542191876750701) 100%);
+}
+.textDiv {
+    list-style: none;
+    color: white;
+    background: black;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.textDiv li{
+    padding: 30px;
+}
+.textDiv li:hover{
+    cursor: pointer;
+    color: blanchedalmond;
+}
+.SocialMediaIcons {
+    list-style: none;
+    color: white;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+.SocialMediaIcons li{
+    padding: 30px;
+}
+.SocialMediaIcons li:hover{
+    cursor: pointer;
+    background: yellow;
+    border-radius: 50% 50%;
+}
+@media only screen and (max-width:600px){
+    .outerDiv{
+        width: 100%;
+        height: auto;
+        background: rgb(235,239,238);
+    background: linear-gradient(167deg, rgba(235,239,238,0.8127626050420168) 0%, rgba(169,171,168,0.07046568627450978) 0%, rgba(235,239,238,0.4542191876750701) 100%);
+    }
+    .textDiv {
+        list-style: none;
+        color: white;
+        background: black;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+        height: 100px;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .textDiv li{
+        padding: 20px;
+        font-size: 10px;
+    }
+    
+    .SocialMediaIcons {
+        list-style: none;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+        height: 70px;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .SocialMediaIcons li{
+        padding: 20px;
+        font-size: 12px;
+    }
+    
+}
