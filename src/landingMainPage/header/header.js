@@ -246,22 +246,20 @@ return(
             </div>
              <div className={Styles.cartDiv}>
             
-              <Link style={{textDecoration: 'none',color:'inherit'}}>
             
               <img 
               src={Login} 
               className={Styles.LoginLogo} 
               onClick={this.LoginModalHandler}/>
-              </Link>
+              
 
-              <Link style={{textDecoration: 'none',color:'inherit'}}>
              <img 
              className={Styles.cartlogo} 
              src={Cartlogo}
              onClick={this.cartModalHandler} />
 
              <p className={Styles.cartNumber}>{badgeNumber}</p>
-            </Link>
+          
             </div>
             </div>
 
@@ -279,23 +277,23 @@ return(
                   this.context.data.currentUserName:
                   this.context.data.currentUser.displayName}
                   </strong></p>
-                <Link>
+                
                     <button onClick={this.props.Logout} >
                     <img style={{width:'30px',padding:'3px'}} src={Logout} />
                      Logout
                     </button>
-                  </Link>
+                
                  
                        
             </div>
             :<div>
                  <input ref={this.usernameRef} type='text' placeholder='UserName' style={{color:'black'}}/>
                  <input ref={this.passwordRef} type='password' placeholder='password' style={{color:'black'}}/>
-                 <Link>
+                 
                   <button onClick={this.handleSubmit} >
                     <img src={Login} /> LogIn
                     </button>
-                  </Link>
+                  
                  <Link to='/register'>
                     <button onClick={this.props.register} style={{color:'#4eb5f1',backgroundColor:'white'}}>
                        Register

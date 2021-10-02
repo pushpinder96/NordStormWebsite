@@ -173,8 +173,6 @@ if(user.emailVerified==false){
 
   render(){
 
-    console.log('exist');
-    console.log(this.state.emailExists);
       const ContextValues={
           data:this.state,
           navbarSticky:this.navbarSticky,
@@ -233,8 +231,8 @@ if(user.emailVerified==false){
                      <Redirect to='/'/>:null
                      }
 
-                    <Route exact path='/casual' component={AllProducts} />
-                    <Route exact path='/buynowpage'>
+                    <Route exact={true} path='/casual' component={AllProducts} />
+                    <Route exact ={true} path='/buynowpage'>
                       <BuyNowPage 
                       image={this.state.BuyNowArray[0]}
                       title={this.state.BuyNowArray[1]}
@@ -256,13 +254,13 @@ if(user.emailVerified==false){
           <Route  path='/login' component={Login} />
           <Route path='/contact' component={contact} />
           <Route path='/sport' component={Sport} />
-          <Route exact path='/'>
+          <Route exact={true} path='/'>
                       <MainPage />
                     </Route>
                       
 
           {this.state.EmailVerification==true?
-          <Redirect exact to='/'/>:
+          <Redirect exact={true} to='/'/>:
            this.state.EmailVerification==false?
            <LoadingModal  description='please check your email account to verify'/>:
                 <div>
