@@ -208,6 +208,7 @@ render(){
                  <p className={Styles.description}>{post[1]}</p>
                  <div>
                    <AddRemoveItem 
+                   key={index*index}
                    item={post[3]}
                    ref={this.MyRef}
                    AddNewItemHandler={(e,counter)=>this.AddNewItemHandler(e,counter)}
@@ -338,6 +339,10 @@ return(
                        this.context.data.cartRendering.length==0?
                        {display:'none'}:{display:'inline-block'}
                      }>
+
+                    </div>
+                     </Link>
+                     
                     {(this.context.data.currentUser)?
                      
                   <StripeCheckout
@@ -352,7 +357,7 @@ return(
                     >
                </StripeCheckout>
                     :
-                 <Link to='/login'>
+                 <Link to='/login' onClick={this.props.register}>
               
 {                 <OverlayTrigger
                     key={'yoo'}
@@ -368,9 +373,6 @@ return(
   }
 
                     </Link>}
-                    </div>
-                     </Link>
-                     
                    </div>
                    
                </div>

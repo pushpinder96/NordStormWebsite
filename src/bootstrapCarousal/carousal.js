@@ -7,7 +7,7 @@ const Carousal =(props)=>{
     return(
         <div>
             <div className='bootstrapSlide'>
-               <Carousel fade interval='1500' nextLabel = '' prevLabel= ''>
+               <Carousel fade nextLabel = '' prevLabel= ''>
                  
   <Carousel.Item>
     <img

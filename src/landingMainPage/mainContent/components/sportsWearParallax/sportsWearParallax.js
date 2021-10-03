@@ -39,7 +39,8 @@ class sportsWearParallax extends Component {
                </div>
                <div className={Styles.Carousal}>
                
-               <Carousal
+               <Carousal 
+              
                Image1={SportsWear1}
                Image2={SportsWear2}
                Image3={SportsWear3} />

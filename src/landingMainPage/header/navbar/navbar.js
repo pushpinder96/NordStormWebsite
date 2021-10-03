@@ -9,7 +9,7 @@ const navbar =(props)=>{
             
             <ul >
                 <li>
-                    <Link exact={true} to='/'
+                    <Link to='/'
                     style={{textDecoration: 'none',color:'inherit'}}>
                         Home
                         </Link>

@@ -62,7 +62,7 @@ export default class App extends React.Component {
     
     <span 
     style ={{fontSize:'40px',position:'relative',top:'30%'}}
-    class="material-icons hello"
+    className="material-icons hello"
     type={`menu-${icon}`}
     sidebarclass="sidebar-toggle"
     onClick={this.toggle}>

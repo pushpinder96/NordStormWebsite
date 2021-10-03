@@ -6,11 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter} from 'react-router-dom';
 ReactDOM.render(
-  <React.StrictMode>
-    <HashRouter>
+
+    <HashRouter basename='/'>
     <App />
     </HashRouter>
-  </React.StrictMode>,
+,
   document.getElementById('root')
 );
 

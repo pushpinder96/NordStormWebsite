@@ -270,12 +270,15 @@
     .LoginLogo{
         width: 30px;
         height: 30px;
+        
     }
 .cartlogo{
     width:30px;
     height: 40px;
     position: absolute;
     top: 0;
+    left: 80%;
+    margin-left: 30px;
 }
 .LoginModal{
     display: none;
@@ -434,10 +437,12 @@
         align-items: center;
     }
     .cartDiv{
+        
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        justify-content: space-between;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
     .LoginLogo{
         width: 30px;
@@ -446,7 +451,8 @@
 .cartlogo{
     width:30px;
     height: 40px;
-    
+    margin-left: 30px;
+   
 }
 .LoginModal{
     display: none;

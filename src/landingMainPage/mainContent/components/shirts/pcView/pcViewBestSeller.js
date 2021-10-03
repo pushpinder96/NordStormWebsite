@@ -46,9 +46,7 @@ TakeRequestShirts=(value)=>{
   {this.context.TakeRequestShirts(value)}
 }
 
-modalAddToCart=(e)=>{
-  
-}
+
 
 AddToCart=(e,counter,name)=>{
 
@@ -113,6 +111,7 @@ getAmountOfElement=(value)=>{
         const objectToArray= 
               Object.entries(this.state.ShowCaseImages).
                      map(([key,value])=>{
+                         
                           return Object.entries(this.state.ShowCaseImages[key])
    })
 
@@ -179,7 +178,8 @@ BuyNowModal=(e)=>{
   
   const renderingComponent =positionOfArray.map((post,index)=>{ 
      return   <SingleProductComponent
-              imageIndex={index} 
+              key={index*2}
+              
               BuyNow={this.BuyNow}
               ref={this.MeRef}
               image={post[1]}
@@ -191,8 +191,9 @@ BuyNowModal=(e)=>{
               />
   })
 
- const renderingModal=positionOfArray.map(post=>{
+ const renderingModal=positionOfArray.map((post,index)=>{
    return <MydModalWithGrid 
+   key={index*2}
    BuyNowModal={this.BuyNowModal}
    AddToCart={this.modalAddToCart}
    show={this.state.modalShow} 

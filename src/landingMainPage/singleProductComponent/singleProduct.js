@@ -54,7 +54,7 @@ props.AddToCart(e,counter,name);
                      null
                      }
 
-       <div ref={ref} data-yo='4' className={Styles.outerdiv} style={props.outerdiv} key={props.key}>
+       <div  ref={ref} d className={Styles.outerdiv} style={props.outerdiv} >
            <div className={Styles.imageDiv}
                 style={props.imageDiv}>
            <div
@@ -94,7 +94,7 @@ props.AddToCart(e,counter,name);
                       
             </button>
               </Link>
-              <Link style={{color:'inherit'}}> 
+              <Link to='/' style={{color:'inherit'}}> 
               <button
                      onClick={getQuantity}
                      style={props.button}>Add To Cart

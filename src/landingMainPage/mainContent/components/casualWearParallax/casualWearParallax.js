@@ -26,7 +26,9 @@ class CasualWearParallax extends Component {
          <div className={Styles.galaxyDiv} style={this.props.galaxyDiv}>
           
           <div className={Styles.quotesDiv}>
-              <p><h1>Fashion</h1> is what you adopt when you don’t know who you are. </p>
+              <p>
+                <span>Fashion</span> 
+                <span>is what you adopt when you don’t know who you are.</span> </p>
               </div>  
               <div className={Styles.ButtonDiv}>
               <Link to='/casual'
