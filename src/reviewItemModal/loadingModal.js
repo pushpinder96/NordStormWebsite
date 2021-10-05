@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useDebugValue } from 'react';
 import {Button,Modal,Spinner} from 'react-bootstrap';
 export default function LoadingModal(props) {
   
@@ -6,7 +6,7 @@ export default function LoadingModal(props) {
     return (
       <>
         
-        <Modal show={true} fullscreen={true} >
+        <Modal show={true} fullscreen={true.toString()} >
           
             <Modal.Title>
                 <Spinner animation="border" role="status">

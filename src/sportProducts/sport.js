@@ -154,7 +154,7 @@ componentDidMount(){
   
         updatedItems=JSON.parse(JSON.stringify(this.context.data.cartRendering));
         updatedItems[FindIndexOfElement]=updatedItem;
-  
+        this.pageSticky();
       }
 
      }
@@ -162,14 +162,27 @@ componentDidMount(){
    BuyNowFunction =(value)=>{
      this.context.BuyNowFunction(value)
    }
+
+  BuyNowModal=(e)=>{
+    const ImageSrc=e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.src;
+    const Title=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].firstChild.innerHTML;
+    const PriceOfItem=e.target.parentElement.parentElement.parentElement.childNodes[2].lastChild.innerHTML;
+    const arr=[ImageSrc,Title,PriceOfItem]
+    this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
+    this.BuyNowFunction(arr);
+   this.pageSticky();
+  }
+  pageSticky=()=>{
+    this.context.navbarSticky();
+  }
    
 
    AddToCart=(e,counter,name)=>{
 
-    let imageSrc= e.target.parentElement.parentElement.parentElement.childNodes[0].lastChild.src;
-     let description= e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
-     let Price =e.target.parentElement.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
-     
+    let imageSrc= e.target.parentElement.parentElement.firstChild.childNodes[1].src;
+     let description= e.target.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
+     let Price =e.target.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
+
      let arrayOfComponents=[imageSrc,description,Price,counter];
      
       const FindIndexOfElement=
@@ -217,12 +230,12 @@ getAmountOfElement=(value)=>{
 
  
    render(){
-        console.log(this.state.arrOfImages);
+      
         const objectToArray= Object.entries(this.state.ShowCaseImages).map(([key,value])=>{
         return Object.entries(this.state.ShowCaseImages[key])
        })
    const positionOfArray = objectToArray.map(post=>{
-       console.log(post[2]);
+      
     return post[2];
    })
    const renderingComponent =positionOfArray.map((post,index)=>{  
@@ -237,10 +250,11 @@ getAmountOfElement=(value)=>{
                AddToCart={(e,counter,name)=>this.AddToCart(e,counter,name)}
                />
    })
- //console.log(this.state.arrOfImages);
+ 
   const renderingModal=positionOfArray.map(post=>{
-      console.log(this.state.arrOfImages);
+    
     return <MydModalWithGrid 
+    BuyNowModal={this.BuyNowModal}
     show={this.state.modalShow} 
     onHide={this.hideFunc}
     imageSwapper={this.imageSwapperFunc}

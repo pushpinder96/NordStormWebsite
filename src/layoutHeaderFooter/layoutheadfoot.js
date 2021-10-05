@@ -5,7 +5,9 @@ import Footer from '../landingMainPage/footer/footer';
 const Layout =(props)=>{
     return(
         <div>
-            <Header outerDiv={props.outerDiv}
+            <Header
+            
+             outerDiv={props.outerDiv}
                      passCounterFunction={(index)=>{props.passCounterFunction(index)}}
                      register={props.register}
                      HomeRegister={props.HomeRegister}

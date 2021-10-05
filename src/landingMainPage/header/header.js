@@ -208,7 +208,8 @@ render(){
                  <p className={Styles.description}>{post[1]}</p>
                  <div>
                    <AddRemoveItem 
-                   key={index*index}
+                   
+                   key={index==index?index*11:index}
                    item={post[3]}
                    ref={this.MyRef}
                    AddNewItemHandler={(e,counter)=>this.AddNewItemHandler(e,counter)}
@@ -219,7 +220,6 @@ render(){
                  <img 
                       className={Styles.delete} 
                       src={Deletelogo} 
-                      key={index} 
                       onClick={(e)=>this.deleteHandler(e,index)}/>
     
   </div> 

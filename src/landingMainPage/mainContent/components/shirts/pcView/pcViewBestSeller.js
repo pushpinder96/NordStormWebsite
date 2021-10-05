@@ -46,14 +46,13 @@ TakeRequestShirts=(value)=>{
   {this.context.TakeRequestShirts(value)}
 }
 
-
-
 AddToCart=(e,counter,name)=>{
 
-    let imageSrc= e.target.parentElement.parentElement.parentElement.childNodes[0].lastChild.src;
-     let description= e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
-     let Price =e.target.parentElement.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
-     
+    
+  let imageSrc= e.target.parentElement.parentElement.firstChild.childNodes[1].src;
+  let description= e.target.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
+  let Price =e.target.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
+
      let arrayOfComponents=[imageSrc,description,Price,counter];
      
       const FindIndexOfElement=
@@ -195,8 +194,7 @@ BuyNowModal=(e)=>{
    return <MydModalWithGrid 
    key={index*2}
    BuyNowModal={this.BuyNowModal}
-   AddToCart={this.modalAddToCart}
-   show={this.state.modalShow} 
+    show={this.state.modalShow} 
    onHide={this.hideFunc}
    imageSwapper={this.imageSwapperFunc}
    Title={this.state.arrOfImages[1]}

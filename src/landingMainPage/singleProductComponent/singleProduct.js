@@ -26,11 +26,12 @@ setTimeout(() => {
 
 if(context.data.currentAmount==0){
     changeCounter(1);
-}
+    console.log(context.data.currentAmount);
+} 
 
 
 else if(context.data.currentAmount>0){
-
+console.log(counter+1);
  changeCounter(counter+1);
 }
 
@@ -54,7 +55,7 @@ props.AddToCart(e,counter,name);
                      null
                      }
 
-       <div  ref={ref} d className={Styles.outerdiv} style={props.outerdiv} >
+       <div  ref={ref} className={Styles.outerdiv} style={props.outerdiv} >
            <div className={Styles.imageDiv}
                 style={props.imageDiv}>
            <div
@@ -73,8 +74,6 @@ props.AddToCart(e,counter,name);
                
            </div>
               <img 
-             
-               data-image={props.imageIndex } 
                src={props.image} 
                style={props.imageStyle} 
                className={props.ImageID}/>
@@ -94,12 +93,12 @@ props.AddToCart(e,counter,name);
                       
             </button>
               </Link>
-              <Link to='/' style={{color:'inherit'}}> 
+            
               <button
                      onClick={getQuantity}
                      style={props.button}>Add To Cart
              </button>
-              </Link>
+              
            </div>
        </div>
     

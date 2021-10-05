@@ -8,6 +8,7 @@ import {Spinner} from 'react-bootstrap';
 class NewArrivals extends Component{
 
   static contextType = MyContext;
+  MeRef = React.createRef();
   state={
     opacity:1,
     ShowCaseImages:[],
@@ -36,14 +37,17 @@ loadingSpinner= async()=>{
     })  
 
 }
-
+TakeRequestNewArrivals=(value)=>{
+  {this.context.TakeRequestNewArrivals(value)}
+}
 
   AddToCart=(e,counter,name)=>{
 
-    let imageSrc= e.target.parentElement.parentElement.parentElement.childNodes[0].lastChild.src;
-     let description= e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
-     let Price =e.target.parentElement.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
-     
+    
+    let imageSrc= e.target.parentElement.parentElement.firstChild.childNodes[1].src;
+     let description= e.target.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
+     let Price =e.target.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
+
      let arrayOfComponents=[imageSrc,description,Price,counter];
      
       const FindIndexOfElement=
@@ -51,6 +55,7 @@ loadingSpinner= async()=>{
         item=>{
             return item[0]===imageSrc;
            });
+           
      let existingCartItem=this.context.data.cartRendering[FindIndexOfElement];
      let updatedItem=[];
      let updatedItems;
@@ -86,11 +91,6 @@ getAmountOfElement=(value)=>{
     changeAddToCartState =(value,counter)=>{
       this.context.changeState(value,counter)
     }
-    
-    
-  TakeRequestNewArrivals=(value)=>{
-    {this.context.TakeRequestNewArrivals(value)}
-  }
 
   imageSwapperFunc=(e)=>{this.setState({MainImage:e.target.src});}
 
@@ -137,12 +137,24 @@ getAmountOfElement=(value)=>{
     const arr=[ImageSrc,Title,PriceOfItem]
     this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
     this.BuyNowFunction(arr);
+    this.pageSticky();
   }
   
   BuyNowFunction =(value)=>{
     this.context.BuyNowFunction(value)
   }
-  
+  BuyNowModal=(e)=>{
+    const ImageSrc=e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.src;
+    const Title=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].firstChild.innerHTML;
+    const PriceOfItem=e.target.parentElement.parentElement.parentElement.childNodes[2].lastChild.innerHTML;
+    const arr=[ImageSrc,Title,PriceOfItem]
+    this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
+    this.BuyNowFunction(arr);
+   this.pageSticky();
+  }
+  pageSticky=()=>{
+    this.context.navbarSticky();
+  }
 
   render(){
        
@@ -154,8 +166,10 @@ getAmountOfElement=(value)=>{
   })
   const renderingComponent =positionOfArray.map((post,index)=>{  
      return <SingleProductComponent
+              
+              key={index}
               BuyNow={this.BuyNow}
-              imageIndex={index} 
+              ref={this.MeRef}
               image={post[1]}
               title={this.state.ShowTitle[index]}
               price={parseFloat(this.state.showPrice[index]).toFixed(2)}
@@ -165,8 +179,10 @@ getAmountOfElement=(value)=>{
               />
   })
 //console.log(this.state.arrOfImages);
- const renderingModal=positionOfArray.map(post=>{
+ const renderingModal=positionOfArray.map((post,index)=>{
    return <MydModalWithGrid 
+   BuyNowModal={this.BuyNowModal}
+   key={index*Math.random()}
    show={this.state.modalShow} 
    onHide={this.hideFunc}
    imageSwapper={this.imageSwapperFunc}

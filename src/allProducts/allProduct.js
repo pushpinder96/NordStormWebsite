@@ -19,11 +19,10 @@ class AllProducts extends Component{
     }
 
     AddToCart=(e,counter,name)=>{
+    let imageSrc= e.target.parentElement.parentElement.firstChild.childNodes[1].src;
+    let description= e.target.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
+    let Price =e.target.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
 
-      let imageSrc= e.target.parentElement.parentElement.parentElement.childNodes[0].lastChild.src;
-       let description= e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
-       let Price =e.target.parentElement.parentElement.parentElement.childNodes[1].childNodes[2].innerHTML; 
-       
        let arrayOfComponents=[imageSrc,description,Price,counter];
        
         const FindIndexOfElement=
