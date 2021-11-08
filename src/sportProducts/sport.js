@@ -240,6 +240,7 @@ getAmountOfElement=(value)=>{
    })
    const renderingComponent =positionOfArray.map((post,index)=>{  
       return <SingleProduct
+               key={index.toString()}
                BuyNow={(e,counter)=> this.BuyNow(e,counter)}
                imageIndex={index} 
                image={post[1]}
@@ -251,9 +252,10 @@ getAmountOfElement=(value)=>{
                />
    })
  
-  const renderingModal=positionOfArray.map(post=>{
+  const renderingModal=positionOfArray.map((post,index)=>{
     
     return <MydModalWithGrid 
+    key={index.toString()}
     BuyNowModal={this.BuyNowModal}
     show={this.state.modalShow} 
     onHide={this.hideFunc}

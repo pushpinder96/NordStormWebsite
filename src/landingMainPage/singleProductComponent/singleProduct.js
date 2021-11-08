@@ -31,7 +31,7 @@ if(context.data.currentAmount==0){
 
 
 else if(context.data.currentAmount>0){
-console.log(counter+1);
+
  changeCounter(counter+1);
 }
 

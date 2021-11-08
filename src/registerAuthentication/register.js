@@ -1,10 +1,10 @@
 import React,{useState,useContext} from  'react';
 import Styles from '../registerAuthentication/register.module.css';
-import {Form,Row,InputGroup,Button,Col,Alert} from 'react-bootstrap';
+import {Form,Row,InputGroup,Button,Col} from 'react-bootstrap';
 import {useRef} from 'react';
 import {MyContext} from '../contextApi/context';
-import AllProducts from '../allProducts/allProduct';
 import Loading from '../LoadingPage/loading';
+import Auth from '../firebase/firebase';
 
 function RegisterAuth() {
     const [validated, setValidated] = useState(false);
@@ -131,7 +131,7 @@ function RegisterAuth() {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="validationCustom04">
+          <Form.Group as={Col} md="6" >
             <Form.Label>Password:</Form.Label>
             <Form.Control 
             id= 'passwordRef'
@@ -145,7 +145,7 @@ function RegisterAuth() {
           </Form.Group>
         </Row>
         <Row className="mb-3">
-          <Form.Group as={Col} md="6" controlId="validationCustom05">
+          <Form.Group as={Col} md="6" >
             <Form.Label>Password Confirmation:</Form.Label>
             <Form.Control 
             id='passwordConfirmRef'
@@ -168,7 +168,7 @@ function RegisterAuth() {
             feedback="You must agree before submitting."
           />
         </Form.Group>
-        <Button disabled={loading} className={Styles.button} type="submit">SignUp</Button>
+        <Button  disabled={loading} className={Styles.button} type="submit">SignUp</Button>
       </Form>
 
       </div>

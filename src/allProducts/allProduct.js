@@ -163,6 +163,7 @@ render(){
    })
    const renderingComponent =positionOfArray.map((post,index)=>{  
       return <SingleProduct
+               key={index.toString()}
                BuyNow={this.BuyNow}
                imageIndex={index} 
                image={post[1]}
@@ -181,9 +182,10 @@ render(){
 const positionOfArray1 = objectToArray1.map(post=>{
     return post[0];
 })
-const renderingModal=positionOfArray.map(post=>{
+const renderingModal=positionOfArray.map((post,index)=>{
     
     return <MydModalWithGrid 
+    key={index.toString()}
     show={this.state.modalShow} 
     onHide={this.hideFunc}
     imageSwapper={this.imageSwapperFunc}
@@ -205,11 +207,12 @@ const renderingModal=positionOfArray.map(post=>{
 
 const renderingComponent1 =positionOfArray1.map((post,index)=>{ 
 return   <SingleProduct
+   key={index.toString()}
    BuyNow={this.BuyNow}
    imageIndex={index} 
    ref={this.MeRef}
-    image={post[1]}
-    title={post[0]}
+   image={post[1]}
+   title={post[0]}
    price={parseFloat(this.state.showPrice[index]).toFixed(2)}
     ImageID='image'
     clicked={this.clicked1}
@@ -217,8 +220,9 @@ return   <SingleProduct
     />
 })
 
-const renderingModal1=positionOfArray1.map(post=>{
+const renderingModal1=positionOfArray1.map((post,index)=>{
     return <MydModalWithGrid 
+    key={index.toString()}
     show={this.state.modalShow1} 
     onHide={this.hideFunc}
     imageSwapper={this.imageSwapperFunc}

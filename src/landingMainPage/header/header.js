@@ -202,20 +202,21 @@ render(){
      this.context.data.cartRendering.map(
         (post,index)=>{
           
-        return <div> 
+        return <div key={index.toString()}> 
                 <div className={Styles.product}>
                  <img className={Styles.pic} src={post[0]} />
                  <p className={Styles.description}>{post[1]}</p>
                  <div>
+                   
                    <AddRemoveItem 
                    
-                   key={index==index?index*11:index}
+                   key={index.toString()}
                    item={post[3]}
                    ref={this.MyRef}
                    AddNewItemHandler={(e,counter)=>this.AddNewItemHandler(e,counter)}
                    removeNewItemHandler={(e)=>this.removeNewItemHandler(e,index)} /> 
                    </div>
-                 
+                  
                  <p className={Styles.price}>{post[2]}</p>
                  <img 
                       className={Styles.delete} 
@@ -344,9 +345,10 @@ return(
                      </Link>
                      
                     {(this.context.data.currentUser)?
+                    (this.context.data.cartRendering.length!==0)?
                      
                   <StripeCheckout
-                    onClick={this.hello}
+                    
                     label='checkout'
                     stripeKey='pk_test_51JRwvSEfdMNMhmC9FdtMz2h2Ho3myGYOYmtLpRLp8x7DvUHMdxVfzD2fYo6YLS8RZeXC4HWAsgacoGSrUapiEorS00S7BxW8CB'
                     token={this.handleToken}
@@ -358,8 +360,8 @@ return(
                </StripeCheckout>
                     :
                  <Link to='/login' onClick={this.props.register}>
-              
-{                 <OverlayTrigger
+                {
+                <OverlayTrigger
                     key={'yoo'}
                     placement='bottom'
                     overlay={
@@ -370,9 +372,25 @@ return(
 
                   <button className={Styles.loginBtn}>Login</button> 
                       </OverlayTrigger>
-  }
+                     }
 
-                    </Link>}
+                    </Link>:
+                      <Link to='/login' onClick={this.props.register}>
+                      {
+                      <OverlayTrigger
+                          key={'yoo'}
+                          placement='bottom'
+                          overlay={
+                            <Tooltip id={`tooltip-bottom`}>
+                              Login First To Access <strong>{'Checkout'}</strong>.
+                            </Tooltip>
+                          }>
+      
+                        <button className={Styles.loginBtn}>Login</button> 
+                            </OverlayTrigger>
+                           }
+      
+                          </Link>}
                    </div>
                    
                </div>
