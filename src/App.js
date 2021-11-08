@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import app from './firebase/firebase';
+
 import './App.css';
 import Routes from './routes/route';
 
