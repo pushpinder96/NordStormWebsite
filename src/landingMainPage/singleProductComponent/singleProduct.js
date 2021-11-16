@@ -26,10 +26,7 @@ setTimeout(() => {
 
 if(context.data.currentAmount==0){
     changeCounter(1);
-    console.log(context.data.currentAmount);
 } 
-
-
 else if(context.data.currentAmount>0){
 
  changeCounter(counter+1);
@@ -38,11 +35,7 @@ else if(context.data.currentAmount>0){
 props.AddToCart(e,counter,name);
 
     }
-    /*
-    useEffect(()=>{
-        
-    },[context.data.currentAmount])
-*/
+  
     return(
     <div>
 {(addtocart==true)?

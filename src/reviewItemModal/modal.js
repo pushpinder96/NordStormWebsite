@@ -3,13 +3,13 @@ import {Link} from 'react-router-dom';
 import Styles from '../reviewItemModal/modal.module.css'
 import {Modal,Button,Container} from 'react-bootstrap';
 import { Component } from 'react';
-class MydModalWithGrid extends Component {
+class MyModalWithGrid extends Component {
  
  
 
   render(){
     return (
-      <Modal {...this.props} aria-labelledby="contained-modal-title-vcenter">
+      <Modal show={this.props.show} onHide={this.props.onHide} aria-labelledby="contained-modal-title-vcenter">
         <Modal.Header >
           <Modal.Title id="contained-modal-title-vcenter">
             {this.props.Title}
@@ -18,10 +18,10 @@ class MydModalWithGrid extends Component {
         <Modal.Body className="show-grid">
           <Container>
             <div style={{display:'flex',flexDirection:'column',position:'absolute',top:'0%'}}>
-            <img id='nestedImage1'onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image1}/>
-            <img id='nestedImage2'onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image2}/>
-            <img id='nestedImage3'onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image3}/>
-            <img id='nestedImage4'onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image4}/>
+            <img id='nestedImage1' onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image1}/>
+            <img id='nestedImage2' onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image2}/>
+            <img id='nestedImage3' onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image3}/>
+            <img id='nestedImage4' onClick={this.props.imageSwapper} style={{width:'80px',height:'100px',padding:'7px',cursor:'pointer'}} src={this.props.image4}/>
             </div>
            
            <div style={{display:'flex',flexDirection:'column',position:'relative',top:'10%',left:'20%'}}>
@@ -49,4 +49,4 @@ class MydModalWithGrid extends Component {
     );
   }
 }
-  export default MydModalWithGrid;
+  export default MyModalWithGrid;

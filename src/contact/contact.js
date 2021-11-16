@@ -12,7 +12,7 @@ const Contact=(props)=>{
     const Context=useContext(MyContext);
 
     function submitContact(value){
-{Context.NotifyUserSubmitContact(value)}
+{Context.NotifyUserSubmitContact(value)};
     }
 
     return(

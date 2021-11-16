@@ -17,7 +17,7 @@ const Sidebar = Keyframes.Spring({
   //  await delay(400);
     await call({ delay: 0, x: -100 })
   },
-})
+});
 
 // Creates a keyframed trail
 const Content = Keyframes.Trail({
@@ -27,7 +27,7 @@ const Content = Keyframes.Trail({
   ],
   open: { x: 0, opacity: 1, delay: 100 },
   close: { x: -100, opacity: 0, delay: 0 },
-})
+});
 
 const items = [
   <Link to='/'

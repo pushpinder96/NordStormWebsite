@@ -17,9 +17,7 @@ const footer=(props)=>{
               <Link to='/contact'style={{textDecoration: 'none',color:'inherit'}}>
                   <li>Contact us</li>
                   </Link>
-              <li>Delivery Info.</li>
               
-
             </div>
             <h6>Follow us on:</h6>
             <div className={Styles.SocialMediaIcons}>

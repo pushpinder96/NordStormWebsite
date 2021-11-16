@@ -98,7 +98,7 @@ getAmountOfElement=(value)=>{
     this.setState({modalShow:true});
     
     let target =e.target.parentElement.parentElement.childNodes[1].src;
-  console.log(target);
+ 
         const objectToArray= 
               Object.entries(this.state.ShowCaseImages).
                      map(([key,value])=>{
@@ -112,16 +112,14 @@ getAmountOfElement=(value)=>{
   
   for(let i=0;i<LoopingThroughArray.length;i++){
     for(let j=0;j<LoopingThroughArray[i].length;j++){
-      console.log(LoopingThroughArray[i]);
+
       for(let p=1;p<LoopingThroughArray[i][j].length;p++){
        
       if(LoopingThroughArray[i][1][1].includes(target)){
         
         this.state.arrOfImages.push(LoopingThroughArray[i][j][1]);
     }
-  else{
-    console.log('whatever');
-  }
+  
 }}}}
 
   hideFunc=()=>{
@@ -148,6 +146,7 @@ getAmountOfElement=(value)=>{
     const Title=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].firstChild.innerHTML;
     const PriceOfItem=e.target.parentElement.parentElement.parentElement.childNodes[2].lastChild.innerHTML;
     const arr=[ImageSrc,Title,PriceOfItem]
+  
     this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
     this.BuyNowFunction(arr);
    this.pageSticky();
@@ -178,7 +177,6 @@ getAmountOfElement=(value)=>{
               AddToCart={(e,counter,name)=>this.AddToCart(e,counter,name)}
               />
   })
-//console.log(this.state.arrOfImages);
  const renderingModal=positionOfArray.map((post,index)=>{
    return <MydModalWithGrid 
    BuyNowModal={this.BuyNowModal}

@@ -40,10 +40,10 @@ class Routes extends Component{
 componentDidUpdate(prev,state){
 
       localStorage.setItem('cart',JSON.stringify(this.state.cartRendering));
-  
+
     }
 componentDidMount(){
- 
+  
   Auth.auth().onAuthStateChanged(async (user)=>{
   if (user) {
   
@@ -70,11 +70,17 @@ if(user.emailVerified==false){
  })
 
 
+setTimeout(()=>{
   let local=JSON.parse(localStorage.getItem('cart'));
-  if(local!==''){
+  if(local.length>0){
     this.setState({cartRendering:local})
+  
   }
+  else{
+    this.setState({cartRendering:[]})
 
+  }
+},100)
 }
   changeStateHandler=(value)=>{
       this.setState({cartRendering:value});
@@ -82,6 +88,7 @@ if(user.emailVerified==false){
 
   BuyNowFunction=(value)=>{
     this.setState({BuyNowArray:value});
+    
 }
     passCounterFunction=(value)=>{
      this.state.index.push(value);
@@ -172,7 +179,7 @@ if(user.emailVerified==false){
 
 
   render(){
-
+  
       const ContextValues={
           data:this.state,
           navbarSticky:this.navbarSticky,
@@ -186,7 +193,8 @@ if(user.emailVerified==false){
           TakeRequestNewArrivals:this.TakeRequestNewArrivals,
           TakeRequestShirts:this.TakeRequestShirts,
           NotifyUserSubmitContact:this.NotifyUserSubmitContact,
-          BuyNowFunction:this.BuyNowFunction
+          BuyNowFunction:this.BuyNowFunction,
+          
       }
 
       return(

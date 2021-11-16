@@ -3,7 +3,7 @@ import Cartlogo from '../../assets/shoppingcart/cart.svg';
 import Deletelogo from '../../assets/shoppingcart/trash.svg';
 import {MyContext} from '../../contextApi/context';
 import Styles from './header.module.css';
-import {Link,Route,Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Logout from '../../assets/login logo/logout.png';
 import Media from 'react-media';
 import Navbar from './navbar/navbar';
@@ -22,14 +22,12 @@ class Header extends Component{
  state={
    loginOpen:false,
    cartOpen:false,
-   cartEmptyCopyArray:this.context.data.cartRendering,
    cart:false,
-   empty:[],
    AddNewItem:1,
    zeroElement:0,
-   localStr:null
   
- }
+  
+ };
  ClearCart=()=>{
    if(this.context.data.cartRendering.length==0){
      console.log('array Is Empty');
@@ -38,7 +36,7 @@ class Header extends Component{
     this.context.data.cartRendering.splice(0,this.context.data.cartRendering.length);
    }
    this.getAmountOfElement(0);
-   this.setState({cart:true})
+   this.setState({cart:true});
  }
 
  deleteHandler=(e,index)=>{
@@ -50,14 +48,14 @@ class Header extends Component{
    }
 
    getAmountOfElement=(value)=>{
-     {this.context.getAmountOfElement(value)}
+     {this.context.getAmountOfElement(value)};
    }
 
   LoginModalHandler=()=>{
-      this.setState({loginOpen:!this.state.loginOpen})
+      this.setState({loginOpen:!this.state.loginOpen});
   }
   cartModalHandler=()=>{
-    this.setState({cartOpen:!this.state.cartOpen})
+    this.setState({cartOpen:!this.state.cartOpen});
 }
 
 
@@ -71,7 +69,7 @@ AddNewItemHandler=(e,counter)=>{
   const FindIndexOfElement=
        this.context.data.cartRendering.findIndex(
         item=>{
-          console.log(priceItem);
+          
             return item[0]===priceItem;
            });
     let existingCartItem=this.context.data.cartRendering[FindIndexOfElement];
@@ -88,13 +86,13 @@ AddNewItemHandler=(e,counter)=>{
       existingCartItem.splice(3,1,UpdatedCounter);
       existingCartItem.splice(2,1,fixedAmount);
       //just to update the state nothing to do with logic;
-      this.setState({AddNewItem:1})
+      this.setState({AddNewItem:1});
       this.updateCounter(UpdatedCounter);
     }
     
 }
 updateCounter=(value)=>{
-  {this.context.updateCounter(value)}
+  {this.context.updateCounter(value)};
 }
 
 
@@ -126,11 +124,11 @@ removeNewItemHandler=(e,index)=>{
       existingCartItem.splice(3,1,UpdatedCounter);
       existingCartItem.splice(2,1,fixedAmount);
       if(UpdatedCounter==0){
-        this.context.data.cartRendering.splice(index,1)
+        this.context.data.cartRendering.splice(index,1);
   
       }
       //just to update the state nothing to do with logic;
-      this.setState({AddNewItem:1})
+      this.setState({AddNewItem:1});
       this.updateCounter(UpdatedCounter);
     }
 }
@@ -139,7 +137,7 @@ handleSubmit = async() => {
       
   try{
   
-   await this.context.signInUser(this.usernameRef.current.value,this.passwordRef.current.value)
+   await this.context.signInUser(this.usernameRef.current.value,this.passwordRef.current.value);
     
   }catch{
      return <Alert variant='danger'>
@@ -151,12 +149,12 @@ handleSubmit = async() => {
 
  NotifyUser=(value)=>{
   console.log('payment done');
-  {this.context.NotifyUser(value)}
+  {this.context.NotifyUser(value)};
 }
 
  NotifyUserError=(value)=>{
   console.log('payment done');
-  {this.context.NotifyUserError(value)}
+  {this.context.NotifyUserError(value)};
 }
 
 
@@ -172,8 +170,6 @@ handleSubmit = async() => {
 if(chargePaymentRequest.data.status=='success'){
 setTimeout(this.NotifyUser, 1000);
  
-
-console.log(chargePaymentRequest.data);
 }
 else{
 setTimeout(this.NotifyUserError, 1000);
@@ -188,6 +184,7 @@ render(){
   const badgeNumber=
      this.context.data.cartRendering.reduce((currentNumber,item)=>{
      let target=parseInt(item[3]);
+     
          return currentNumber+target;
   },0)
 

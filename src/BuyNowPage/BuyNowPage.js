@@ -1,6 +1,5 @@
 import React, { useState,useContext } from "react";
 import Styles from '../BuyNowPage/BuyNowPage.module.css';
-import Shirt from '../assets/singleProductImages/blackTshirt/blackTshirt';
 import AddRemoveItem from "../landingMainPage/header/increase/decrease/incDec";
 import StripeCheckout from "react-stripe-checkout";
 import { Link,useHistory } from "react-router-dom";
@@ -12,28 +11,28 @@ const BuyNowPage=(props)=> {
     const context=useContext(MyContext);
     const history=useHistory();
 
-   const checkout=()=>{ history.push('/login')}
+   const checkout=()=>{ history.push('/login')};
 
   const NotifyUser=(value)=>{
     console.log('payment done');
-    {context.NotifyUser(value)}
+    {context.NotifyUser(value)};
   }
   
   const NotifyUserError=(value)=>{
     console.log('payment done');
-    {context.NotifyUserError(value)}
+    {context.NotifyUserError(value)};
   }
   
   
 
   const handleToken= async(token)=>{
-    const product={name:'Your Shopping Cart',price:TotalPrice}
+    const product={name:'Your Shopping Cart',price:TotalPrice};
     const chargePaymentRequest=
      await axios.post('http://localhost:8080/checkoutserve',
   {
      product,
       token
-  })
+  });
   
   if(chargePaymentRequest.data.status=='success'){
   setTimeout(NotifyUser, 1000);

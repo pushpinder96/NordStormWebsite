@@ -52,7 +52,7 @@ class AllProducts extends Component{
         }
         else{
           let copiedArray=this.context.data.cartRendering.concat([arrayOfComponents]);
-         updatedItems=JSON.parse(JSON.stringify(copiedArray))
+         updatedItems=JSON.parse(JSON.stringify(copiedArray));
          
         }
       
@@ -63,7 +63,7 @@ class AllProducts extends Component{
     {this.context.getAmountOfElement(value)};
   }
       changeAddToCartState =(value,counter)=>{
-        this.context.changeState(value,counter)
+        this.context.changeState(value,counter);
       }
       
       
@@ -79,7 +79,7 @@ class AllProducts extends Component{
         const objectToArray= 
               Object.entries(this.context.data.TakeRequestNewArrivals).
                      map(([key,value])=>{
-                          return Object.entries(this.context.data.TakeRequestNewArrivals[key])
+                          return Object.entries(this.context.data.TakeRequestNewArrivals[key]);
    })
 
   const LoopingThroughArray= objectToArray.map(post1=>{
@@ -89,16 +89,12 @@ class AllProducts extends Component{
   for(let i=0;i<LoopingThroughArray.length;i++){
     for(let j=0;j<LoopingThroughArray[i].length;j++){
       for(let p=1;p<LoopingThroughArray[i][j].length;p++){
-      // console.log(target);
-      console.log(LoopingThroughArray[i][1][1]);
+      
       if(LoopingThroughArray[i][1][1].includes(target)){
         
         this.state.arrOfImages.push(LoopingThroughArray[i][j][1]);
        
     }
-  else{
-    console.log('whatever');
-  }
 }}}}
 
   hideFunc=()=>{
@@ -106,8 +102,8 @@ class AllProducts extends Component{
     this.setState({modalShow1:false});
     
      this.setState({arrOfImages:[]});
-     this.setState({arrOfImages1:[]})
-     this.setState({MainImage:null})
+     this.setState({arrOfImages1:[]});
+     this.setState({MainImage:null});
   }
 
   //normal shirts
@@ -120,7 +116,7 @@ class AllProducts extends Component{
         const objectToArray1= 
               Object.entries(this.context.data.TakeRequestShirts).
                      map(([key,value])=>{
-                          return Object.entries(this.context.data.TakeRequestShirts[key])
+                          return Object.entries(this.context.data.TakeRequestShirts[key]);
    })
 
   const LoopingThroughArray1= objectToArray1.map(post1=>{ return post1;})
@@ -133,30 +129,41 @@ class AllProducts extends Component{
         this.state.arrOfImages1.push(LoopingThroughArray1[i][j][1]);
        
     }
-  else{
-    console.log('whatever');
-  }
 }}}}
 
 BuyNow=(e)=>{
   const ImageSrc=e.target.parentElement.parentElement.parentElement.firstChild.lastChild.src;
   const Title=e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.innerHTML;
   const PriceOfItem=e.target.parentElement.parentElement.parentElement.childNodes[1].lastChild.innerHTML;
-  const arr=[ImageSrc,Title,PriceOfItem]
+  const arr=[ImageSrc,Title,PriceOfItem];
   this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
   this.BuyNowFunction(arr);
 }
 
 BuyNowFunction =(value)=>{
-  this.context.BuyNowFunction(value)
+  this.context.BuyNowFunction(value);
 }
+
+BuyNowModal=(e)=>{
+ const ImageSrc=e.target.parentElement.parentElement.parentElement.childNodes[1].firstChild.src;
+ const Title=e.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].firstChild.innerHTML;
+ const PriceOfItem=e.target.parentElement.parentElement.parentElement.childNodes[2].lastChild.innerHTML;
+ const arr=[ImageSrc,Title,PriceOfItem]
+ this.context.data.BuyNowArray.push(ImageSrc,Title,PriceOfItem);
+ this.BuyNowFunction(arr);
+this.pageSticky();
+}
+pageSticky=()=>{
+ this.context.navbarSticky();
+}
+
 
 
     
 render(){
 //new arrivals
     const objectToArray= Object.entries(this.context.data.TakeRequestNewArrivals).map(([key,value])=>{
-        return Object.entries(this.context.data.TakeRequestNewArrivals[key])
+        return Object.entries(this.context.data.TakeRequestNewArrivals[key]);
        })
    const positionOfArray = objectToArray.map(post=>{
     return post[1];
@@ -185,6 +192,7 @@ const positionOfArray1 = objectToArray1.map(post=>{
 const renderingModal=positionOfArray.map((post,index)=>{
     
     return <MydModalWithGrid 
+    BuyNowModal={this.BuyNowModal}
     key={index.toString()}
     show={this.state.modalShow} 
     onHide={this.hideFunc}
@@ -222,6 +230,7 @@ return   <SingleProduct
 
 const renderingModal1=positionOfArray1.map((post,index)=>{
     return <MydModalWithGrid 
+    BuyNowModal={this.BuyNowModal}
     key={index.toString()}
     show={this.state.modalShow1} 
     onHide={this.hideFunc}

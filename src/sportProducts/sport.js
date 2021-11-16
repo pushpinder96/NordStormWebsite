@@ -93,7 +93,7 @@ componentDidMount(){
      this.setState({modalShow:true});
      
      let target =e.target.parentElement.parentElement.childNodes[1].src;
-   console.log(target);
+
          const objectToArray= 
                Object.entries(this.state.ShowCaseImages).
                       map(([key,value])=>{

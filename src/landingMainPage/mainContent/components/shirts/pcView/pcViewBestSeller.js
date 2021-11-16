@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import SingleProductComponent from '../../../../singleProductComponent/singleProduct';
 import Styles from '../pcView/PcViewBestSeller.module.css';
 import axios from '../../../../../axios-orders';
-import MydModalWithGrid from '../../../../../reviewItemModal/modal';
+import MyModalWithGrid from '../../../../../reviewItemModal/modal';
 import {MyContext} from '../../../../../contextApi/context';
-import {Spinner} from 'react-bootstrap';
+import {Spinner, ThemeProvider} from 'react-bootstrap';
 
 class PcViewBestSeller extends Component{
   
@@ -88,6 +88,7 @@ AddToCart=(e,counter,name)=>{
     
     this.changeAddToCartState(updatedItems,counter);
     this.getAmountOfElement(name);
+
 }
 getAmountOfElement=(value)=>{
   {this.context.getAmountOfElement(value)};
@@ -95,7 +96,6 @@ getAmountOfElement=(value)=>{
     changeAddToCartState =(value,counter)=>{
       this.context.changeState(value,counter)
     }
-    
     
 
 //imageswapper
@@ -191,7 +191,7 @@ BuyNowModal=(e)=>{
   })
 
  const renderingModal=positionOfArray.map((post,index)=>{
-   return <MydModalWithGrid 
+   return <MyModalWithGrid 
    key={index*2}
    BuyNowModal={this.BuyNowModal}
     show={this.state.modalShow} 
